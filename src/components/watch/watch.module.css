@@ -1,0 +1,42 @@
+.watch_wrep {
+  position: fixed;
+  top: 100px;
+  left: 70px;
+  width: 400px;
+  height: 250px;
+  z-index: 3;
+}
+
+.watch_wrep {
+  font-size: 48px;
+  line-height: 64px;
+  color: white;
+}
+
+.watch_wrep span {
+  display: inline-block;
+}
+
+.watch_wrep span:nth-child(odd) {
+  width: 65px;
+}
+
+.watch_wrep span:nth-child(even) {
+  width: 25px;
+  height: 75px;
+}
+
+.times_wrep {
+  display: flex;
+  align-items: center;
+  width: 245px;
+  margin: 0 auto;
+}
+
+.greetings {
+  font-size: 36px;
+  line-height: 32px;
+  margin: 10px auto;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
