@@ -6,3 +6,6 @@ body {
   overflow: hidden;
 }
 
+p{
+  margin: 0;
+}

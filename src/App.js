@@ -1,5 +1,6 @@
 import { Watch } from './components/watch/Watch.jsx';
 import { BackgroundSlider } from './components/backgroundSlider/BackgroundSlider.jsx';
+import { WeatherForLocation } from './components/weatherForLocation/WeatherForLocation.jsx';
 import './App.css';
 
 const objArrayImages = {
@@ -11,6 +12,7 @@ function App() {
     <div className="App">
       <Watch />
       <BackgroundSlider arrayImages={objArrayImages.sun} />
+      <WeatherForLocation/>
     </div>
   );
 }

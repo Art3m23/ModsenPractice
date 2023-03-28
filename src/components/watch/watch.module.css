@@ -3,7 +3,7 @@
   top: 100px;
   left: 70px;
   width: 400px;
-  height: 250px;
+  height: 200px;
   z-index: 3;
 }
 
@@ -13,15 +13,15 @@
   color: white;
 }
 
-.watch_wrep span {
+.times_wrep span {
   display: inline-block;
 }
 
-.watch_wrep span:nth-child(odd) {
+.times_wrep span:nth-child(odd) {
   width: 65px;
 }
 
-.watch_wrep span:nth-child(even) {
+.times_wrep span:nth-child(even) {
   width: 25px;
   height: 75px;
 }
@@ -38,5 +38,15 @@
   line-height: 32px;
   margin: 10px auto;
   text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+.date_wrep {
+  height: 45px;
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 32px;
+  line-height: 24px;
   letter-spacing: 3px;
 }
