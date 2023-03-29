@@ -1,9 +1,9 @@
 import { combineReducers,applyMiddleware } from "redux";
 import { configureStore } from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
-import { weatherByGeoReducer } from "./reducerWeatherByGeo";
+import { weatherReducer } from "./reducerWeather";
 const rootReducer = combineReducers({
-  weather: weatherByGeoReducer,
+  weather: weatherReducer,
 });
 
 

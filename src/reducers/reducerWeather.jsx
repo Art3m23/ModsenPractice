@@ -1,6 +1,6 @@
 import {
-  GET_WHEATHER_BY_GEO,
-  SET_IS_FETCHING_WEATHER_BY_GEO,
+  GET_WHEATHER,
+  SET_IS_FETCHING_WEATHER,
 } from "../actions/types";
 
 const weather = JSON.parse(localStorage.getItem("weather"));
@@ -10,16 +10,16 @@ const defaultState = weather
   : { isFetching: false, weather: null };
 
 
-export const weatherByGeoReducer = (state = defaultState, action) => {
+export const weatherReducer = (state = defaultState, action) => {
   const { type, payload } = action;
   switch (type) {
-    case GET_WHEATHER_BY_GEO:
+    case GET_WHEATHER:
       return {
         ...state,
         weather: payload.weather,
         isFetching: false,
       };
-    case SET_IS_FETCHING_WEATHER_BY_GEO:
+    case SET_IS_FETCHING_WEATHER:
       return {
         ...state,
         isFetching: payload,

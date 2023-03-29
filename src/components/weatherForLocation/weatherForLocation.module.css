@@ -11,7 +11,7 @@
 }
 
 .city_wrep input {
-  width: auto;
+  width: 295px;
   height: 40px;
   padding-left: 60px;
   font-size: 24px;
@@ -30,12 +30,65 @@
 .city_wrep img {
   width: 64px;
   height: 64px;
+  margin-left: 0;
 }
 
-.temp {
+.current_weather_wrep {
+  width: 403px;
+  padding: 8px 0 8px 8px;
+  margin-left: 8px;
+  border-radius: 5px;
+  background-color:cadetblue;
+}
+
+.params_weather_wrep {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 403px;
+}
+
+.params_weather {
+  width: auto;
   margin-top: 10px;
   padding-left: 15px;
   font-weight: 400;
   font-size: 18px;
   text-align: left;
+}
+
+.input_wrep {
+  display: flex;
+  align-items: center;
+  width: 725px;
+}
+
+.search{
+  width: 40px;
+  height: 40px;
+  outline: none;
+  border: 0;
+  background-color: transparent;
+  background-image: url(../../../public/images/search-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.params_weather_for_week_wrep {
+  display: flex;
+  justify-content: space-between;
+  width: 725px;
+  height: 120px;
+  margin-top: 25px;
+  padding: 8px;
+}
+
+.params_weather_for_day {
+  width: 85px;
+  height: auto;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  background-color:cadetblue;
 }
