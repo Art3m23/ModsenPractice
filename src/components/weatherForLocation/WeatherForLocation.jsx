@@ -44,7 +44,10 @@ export const WeatherForLocation = () => {
                 <button type='button' onClick={handleClick} className={styles.search} />
               </div>
               <div className={styles.params_weather_wrep}>
-                <img src={weather.current.condition.icon} alt='weather-icon' />
+                <div className={styles.img_wrep}>
+                  <img src={weather.current.condition.icon} alt='weather-icon' />
+                  <p className={styles.weather_text}>{weather.current.condition.text}</p>
+                </div>
                 <p className={styles.params_weather}>{'Temperature: ' + weather.current.temp_c + ' °C'}</p>
                 <p className={styles.params_weather}>{'Feels like: ' + weather.current.feelslike_c + ' °C'}</p>
                 <p className={styles.params_weather}>{'Wind speed: ' + weather.current.wind_kph + ' km/h'}</p>
