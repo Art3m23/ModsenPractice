@@ -1,0 +1,85 @@
+.slider_wrep, .slider {
+  width: 725px;
+  height: 350px;
+}
+
+.slider_wrep {
+  position: relative;
+  padding: 8px;
+}
+
+.swiper-wrapper .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.swiper-slide p {
+  font-size: 14px;
+  padding: 0 5px;
+}
+
+.slider_wrep .swiper-button-next:after, .slider_wrep .swiper-button-prev:after {
+  font-size: 14px;
+  color: white;
+}
+
+.slider_wrep .swiper-button-next, .slider_wrep .swiper-button-prev {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+  opacity: 0;
+}
+
+.slider_wrep .swiper {
+  position: static;
+}
+
+.slider_wrep .swiper-button-next {
+  right: var(--swiper-navigation-sides-offset, -5px);
+}
+
+.slider_wrep .swiper-button-prev {
+  left: var(--swiper-navigation-sides-offset, -5px);
+}
+
+.slider_wrep .time {
+  width: 100%;
+  padding: 10px 0 0 0;
+  border-top: 2px solid white;
+}
+
+.slider_wrep .wind,
+.slider_wrep .humidity,
+.slider_wrep .temp {
+  padding-left: 25px;
+  font-size: 12px;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+.slider_wrep .wind {
+  background-image: url(../../../public/images/cloud-wind-icon.svg);
+}
+
+.slider_wrep .humidity {
+  background-image: url(../../../public/images/drop-humidity-icon.svg);
+}
+
+.slider_wrep .temp {
+  background-image: url(../../../public/images/thermometer-icon.svg);
+}
+
+.slider_wrep .weather_text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+}

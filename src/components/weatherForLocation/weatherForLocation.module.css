@@ -38,7 +38,7 @@
   padding: 8px 0 8px 8px;
   margin-left: 8px;
   border-radius: 5px;
-  background-color:cadetblue;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .params_weather_wrep {
@@ -63,7 +63,7 @@
   width: 725px;
 }
 
-.search{
+.search {
   width: 40px;
   height: 40px;
   outline: none;
@@ -90,7 +90,34 @@
   padding: 5px;
   text-align: center;
   border-radius: 5px;
-  background-color:cadetblue;
+  background-color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.days_img_wrep,
+.params_weather_for_day p {
+  pointer-events: none;
+}
+
+.activeDay {
+  position: relative;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.activeDay::after {
+  content: '';
+  width: 0;
+  height: 0;
+  display: block;
+  position: absolute;
+  z-index: 10;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  margin-left: -12px;
+  left: 50%;
+  border-top: 12px solid rgba(0, 0, 0, 0.9);
+  bottom: -12px;
 }
 
 .img_wrep {

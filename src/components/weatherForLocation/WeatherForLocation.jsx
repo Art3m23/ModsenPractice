@@ -1,11 +1,14 @@
 import styles from './weatherForLocation.module.css'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getWeatherByGeo } from '../../actions/weather';
 import { getWeather } from '../../actions/weather';
+import { HourlyWeather } from '../hourlyWeather/HourlyWeather';
 
 export const WeatherForLocation = () => {
   const [value, setValue] = useState('');
+  const weatherForWeek = useRef(null);
+  const [activeDay, setActiveDay] = useState(0);
   const dispatch = useDispatch();
   const weather = useSelector(state => state.weather.weather);
   useEffect(() => {
@@ -19,7 +22,9 @@ export const WeatherForLocation = () => {
     }
   }, [dispatch])
 
-
+  useEffect(() => {
+    [...weatherForWeek.current.children][0].classList.add(styles.activeDay);
+  },[]);
 
   useEffect(() => {
     if (weather) {
@@ -32,6 +37,17 @@ export const WeatherForLocation = () => {
   }
   const handleClick = () => {
     dispatch(getWeather(value));
+  }
+  const handleClickDay = (e) => {
+    if (e.target.closest(`.${styles.params_weather_for_day}`)) {
+      setActiveDay([...weatherForWeek.current.children].indexOf(e.target));
+      [...weatherForWeek.current.children].forEach(element => {
+        element.classList.remove(styles.activeDay);
+      });
+      e.target.classList.add(styles.activeDay);
+    } else {
+      return;
+    }
   }
   return (
     <>
@@ -55,17 +71,18 @@ export const WeatherForLocation = () => {
                 <p className={styles.params_weather}>{'Cloud cover: ' + weather.current.cloud + ' %'}</p>
               </div>
             </div>
-            <div className={styles.params_weather_for_week_wrep}>
+            <div ref={weatherForWeek} className={styles.params_weather_for_week_wrep} onClick={handleClickDay}>
               {weather.forecast.forecastday.map((el, i) =>
                 <div key={i} className={styles.params_weather_for_day}>
                   <p>{i === 0 ? 'Today' : new Date(el.date).toLocaleString('en', { weekday: 'short' }) + ' ' + new Date(el.date).getDate()}</p>
-                  <div>
+                  <div className={styles.days_img_wrep}>
                     <img src={el.day.condition.icon} alt='weather-icon' />
                     <p>{el.day.maxtemp_c}°</p>
                   </div>
                 </div>
               )}
             </div>
+            <HourlyWeather activeDay={activeDay} />
           </>
         }
       </div>
