@@ -17,7 +17,7 @@ export const HourlyWeather = ({ activeDay }) => {
         {weather.forecast.forecastday[activeDay].hour.map((el, i) =>
           <SwiperSlide key={i}>
             <img src={el.condition.icon} alt='weather-icon' />
-            <p className='params_weather temp'>{el.temp_c + ' °'}</p>
+            <p className='params_weather temp'>{Math.round(el.temp_c) + ' °'}</p>
             <p className='weather_text'>{el.condition.text}</p>
             <p className='params_weather wind'>{el.wind_kph + ' km/h'}</p>
             <p className='params_weather humidity'>{el.humidity + ' %'}</p>

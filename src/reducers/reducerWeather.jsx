@@ -4,7 +4,6 @@ import {
 } from "../actions/types";
 
 const weather = JSON.parse(localStorage.getItem("weather"));
-console.log(weather)
 const defaultState = weather
   ? { isFetching: false, weather }
   : { isFetching: false, weather: null };

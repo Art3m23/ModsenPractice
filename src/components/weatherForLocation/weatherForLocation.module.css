@@ -1,7 +1,4 @@
 .city_wrep {
-  position: absolute;
-  top: 100px;
-  right: 50px;
   display: flex;
   flex-direction: column;
   font-family: Verdana, Geneva, Tahoma, sans-serif;

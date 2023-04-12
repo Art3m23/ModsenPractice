@@ -1,0 +1,35 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url(../../../public/images/1643268866_4-phonoteka-org-p-pogoda-fon-4.png);
+  background-size: cover;
+  z-index: 10;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 128px;
+  color: white;
+}
+
+.sign_in {
+  width: 350px;
+  height: 350px;
+  border: 0;
+  outline: none;
+  padding-top: 80px;
+  padding-right: 40px;
+  font-size: 36px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  background: transparent;
+  background-image: url(../../../public/images/1631540335_5-papik-pro-p-pogoda-konturnii-risunok-5-removebg-preview.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}

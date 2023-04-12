@@ -7,4 +7,4 @@ const rootReducer = combineReducers({
 });
 
 
-export const store = configureStore({ reducer: rootReducer },applyMiddleware([thunk]));
+export const store = configureStore({ reducer: rootReducer },applyMiddleware(thunk));

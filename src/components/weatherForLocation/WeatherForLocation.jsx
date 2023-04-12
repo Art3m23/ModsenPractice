@@ -5,12 +5,14 @@ import { getWeatherByGeo } from '../../actions/weather';
 import { getWeather } from '../../actions/weather';
 import { HourlyWeather } from '../hourlyWeather/HourlyWeather';
 
+
 export const WeatherForLocation = () => {
   const [value, setValue] = useState('');
   const weatherForWeek = useRef(null);
   const [activeDay, setActiveDay] = useState(0);
   const dispatch = useDispatch();
   const weather = useSelector(state => state.weather.weather);
+
   useEffect(() => {
     if ("geolocation" in navigator && !localStorage.getItem('weather')) {
 
@@ -24,7 +26,7 @@ export const WeatherForLocation = () => {
 
   useEffect(() => {
     [...weatherForWeek.current.children][0].classList.add(styles.activeDay);
-  },[]);
+  }, []);
 
   useEffect(() => {
     if (weather) {
@@ -49,6 +51,7 @@ export const WeatherForLocation = () => {
       return;
     }
   }
+
   return (
     <>
       <div className={styles.city_wrep}>
@@ -64,8 +67,8 @@ export const WeatherForLocation = () => {
                   <img src={weather.current.condition.icon} alt='weather-icon' />
                   <p className={styles.weather_text}>{weather.current.condition.text}</p>
                 </div>
-                <p className={styles.params_weather}>{'Temperature: ' + weather.current.temp_c + ' °C'}</p>
-                <p className={styles.params_weather}>{'Feels like: ' + weather.current.feelslike_c + ' °C'}</p>
+                <p className={styles.params_weather}>{'Temperature: ' + Math.round(weather.current.temp_c) + ' °C'}</p>
+                <p className={styles.params_weather}>{'Feels like: ' + Math.round(weather.current.feelslike_c) + ' °C'}</p>
                 <p className={styles.params_weather}>{'Wind speed: ' + weather.current.wind_kph + ' km/h'}</p>
                 <p className={styles.params_weather}>{'Humidity: ' + weather.current.humidity + ' %'}</p>
                 <p className={styles.params_weather}>{'Cloud cover: ' + weather.current.cloud + ' %'}</p>
@@ -77,7 +80,7 @@ export const WeatherForLocation = () => {
                   <p>{i === 0 ? 'Today' : new Date(el.date).toLocaleString('en', { weekday: 'short' }) + ' ' + new Date(el.date).getDate()}</p>
                   <div className={styles.days_img_wrep}>
                     <img src={el.day.condition.icon} alt='weather-icon' />
-                    <p>{el.day.maxtemp_c}°</p>
+                    <p>{Math.round(el.day.maxtemp_c)}°</p>
                   </div>
                 </div>
               )}
