@@ -1,13 +1,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useSelector } from "react-redux";
-// Import Swiper styles
+import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
-
-import "./hourlyWeather.css";
-
-// import required modules
-import { Navigation } from "swiper";
+import "./style.css";
 
 export const HourlyWeather = ({ activeDay }) => {
   const weather = useSelector(state => state.weather.weather);

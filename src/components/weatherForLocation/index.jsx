@@ -1,9 +1,9 @@
-import styles from './weatherForLocation.module.css'
+import styles from './style.module.css'
 import { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getWeatherByGeo } from '../../actions/weather';
 import { getWeather } from '../../actions/weather';
-import { HourlyWeather } from '../hourlyWeather/HourlyWeather';
+import { HourlyWeather } from '../hourlyWeather';
 
 
 export const WeatherForLocation = () => {
@@ -14,7 +14,7 @@ export const WeatherForLocation = () => {
   const weather = useSelector(state => state.weather.weather);
 
   useEffect(() => {
-    if ("geolocation" in navigator && !localStorage.getItem('weather')) {
+    if ("geolocation" in navigator && weather===null) {
 
       const geo_success = (position) => {
         dispatch(getWeatherByGeo(position.coords.latitude, position.coords.longitude))
@@ -22,24 +22,23 @@ export const WeatherForLocation = () => {
       navigator.geolocation.getCurrentPosition(geo_success);
 
     }
-  }, [dispatch])
-
-  useEffect(() => {
-    [...weatherForWeek.current.children][0].classList.add(styles.activeDay);
-  }, []);
+  }, [dispatch,weather])
 
   useEffect(() => {
     if (weather) {
       setValue(weather.location.name);
+      [...weatherForWeek.current.children][0].classList.add(styles.activeDay);
     }
   }, [weather])
 
   const changeLocation = (e) => {
     setValue(e.target.value);
   }
+
   const handleClick = () => {
     dispatch(getWeather(value));
   }
+
   const handleClickDay = (e) => {
     if (e.target.closest(`.${styles.params_weather_for_day}`)) {
       setActiveDay([...weatherForWeek.current.children].indexOf(e.target));

@@ -1,6 +1,4 @@
-import styles from './backgroundImage.module.css'
-import { useSelector } from 'react-redux'
-const objImages = {
+export const objImages = {
   'Sunny': 'images/solnechnaya-pogoda.jpg',
   'Clear': 'images/clear.jpg',
   'Overcast': 'images/overcast.jpg',
@@ -17,7 +15,7 @@ const objImages = {
   'Fog': 'images/fog.jpg',
   'Freezing fog': 'images/fog.jpg',
   'Patchy light drizzle': 'images/light_drizzle.jpg',
-  'Light drizzle': 'images/light drizzle.jpg',
+  'Light drizzle': 'images/light_drizzle.jpg',
   'Freezing drizzle': 'images/freezing_drizzle.jpg',
   'Heavy freezing drizzle': 'images/Heavy_freezing_drizzle.jpg',
   'Patchy light rain': 'images/light_rain.jpg',
@@ -49,12 +47,4 @@ const objImages = {
   'Moderate or heavy rain with thunder': 'images/heavy_rain_thunder.jpg',
   'Patchy light snow with thunder': 'images/light_snow_thunder.jpeg',
   'Moderate or heavy snow with thunder': 'images/heavy_snow_thunder.jpg',
-}
-export const BackgroundImage = () => {
-  const weather = useSelector(state=>state.weather.weather);
-  return (
-    <div className={styles.img_wrep}>
-      {weather!==null && <img src={objImages[weather.current.condition.text]} alt='weather'/>}
-    </div>
-  )
 }

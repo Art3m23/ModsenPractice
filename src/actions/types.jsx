@@ -1,3 +1,4 @@
-
 export const GET_WHEATHER = "GET_WHEATHER";
-export const SET_IS_FETCHING_WEATHER = "SET_IS_FETCHING_WEATHER";
+export const RESET_WHEATHER = "RESET_WHEATHER";
+export const GET_EVENTS = "GET_EVENTS";
+export const RESET_EVENTS = "RESET_EVENTS";

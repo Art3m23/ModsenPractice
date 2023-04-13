@@ -1,12 +1,12 @@
 import {
   GET_WHEATHER,
-  SET_IS_FETCHING_WEATHER,
+  RESET_WHEATHER,
 } from "../actions/types";
 
-const weather = JSON.parse(localStorage.getItem("weather"));
+const weather = localStorage.getItem("persist:root");
 const defaultState = weather
-  ? { isFetching: false, weather }
-  : { isFetching: false, weather: null };
+  ? { weather }
+  : { weather: null };
 
 
 export const weatherReducer = (state = defaultState, action) => {
@@ -16,13 +16,12 @@ export const weatherReducer = (state = defaultState, action) => {
       return {
         ...state,
         weather: payload.weather,
-        isFetching: false,
       };
-    case SET_IS_FETCHING_WEATHER:
+    case RESET_WHEATHER:
       return {
         ...state,
-        isFetching: payload,
-      }
+        weather: null,
+      };
     default:
       return state;
   }

@@ -1,0 +1,49 @@
+.events_container {
+  width: 500px;
+  height: auto;
+  max-height: 450px;
+  margin-top: 50px;
+  padding: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.events_container h2 {
+  margin: 0;
+  margin-bottom: 50px;
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: 900;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.events {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.events_item {
+  display: flex;
+  justify-content: space-around;
+  width: 200px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.description {
+  width: 400px;
+  height: 200px;
+  font-size: 24px;
+  line-height: 36px;
+  background-image: url(../../../public/images/no-event.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:contain;
+}

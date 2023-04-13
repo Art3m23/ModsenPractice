@@ -1,7 +1,7 @@
 import { useGoogleLogin } from '@react-oauth/google';
 import styles from './style.module.css'
 
-export const SignIn = ({ setToken }) => {
+export const MainPage = ({ setToken }) => {
   const handleClick = useGoogleLogin({
     onSuccess: codeResponse => {
       localStorage.setItem('token', JSON.stringify(codeResponse));
