@@ -1,32 +1,21 @@
 import { useEffect } from 'react';
-import ApiCalendar from 'react-google-calendar-api';
 import { getEvents } from '../../actions/events';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from './style.module.css'
 
-const config = {
-  "clientId": "873908410228-2eiurj3dn7askps354etbvtulnpl96nb.apps.googleusercontent.com",
-  "apiKey": "AIzaSyCQCeLUnmutLbsIQLyOVM9xWDQl2V14WcY",
-  "scope": "https://www.googleapis.com/auth/calendar",
-  "discoveryDocs": [
-    "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"
-  ]
-}
 
-const apiCalendar = new ApiCalendar(config);
 
 export const EventsCalendar = () => {
-
+  
   const events = useSelector(state => state.events.events);
-
+  
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (!events) {
-      dispatch(getEvents(apiCalendar));
+    if(!events){
+      dispatch(getEvents());
     }
-  }, [events, dispatch])
-
+  },[dispatch,events])
   return (
     <div className={styles.events_container}>
       <h2>today's events</h2>

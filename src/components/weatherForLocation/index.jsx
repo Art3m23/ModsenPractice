@@ -36,6 +36,9 @@ export const WeatherForLocation = () => {
   }
 
   const handleClick = () => {
+    [...weatherForWeek.current.children].forEach(element => {
+      element.classList.remove(styles.activeDay);
+    });
     dispatch(getWeather(value));
   }
 

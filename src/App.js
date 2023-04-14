@@ -32,7 +32,7 @@ function App() {
         <div className='content'>
           <div>
             <Watch />
-            {token && <EventsCalendar />}
+            {token && <EventsCalendar/>}
           </div>
           <WeatherForLocation setToken={setToken} token={token} />
         </div>
