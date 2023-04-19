@@ -1,13 +1,13 @@
 import { useSelector } from 'react-redux';
 import styles from './style.module.css';
-import { objImages } from '../../const/const';
+import { objImages } from '../../const/const.jsx';
 
 
 export const BackgroundImage = () => {
-  const weather = useSelector(state=>state.weather.weather);
+  const weather = useSelector(state => state.weather.weather);
   return (
     <div className={styles.img_wrep}>
-      {weather!==null && <img src={objImages[weather.current.condition.text]} alt='weather'/>}
+      {weather !== null && <img src={objImages[weather.current.condition.text]} alt='weather' />}
     </div>
   )
 }

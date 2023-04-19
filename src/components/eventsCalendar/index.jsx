@@ -12,10 +12,10 @@ export const EventsCalendar = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if(!events){
-      dispatch(getEvents());
-    }
-  },[dispatch,events])
+    dispatch(getEvents());
+  },[dispatch])
+
+
   return (
     <div className={styles.events_container}>
       <h2>today's events</h2>

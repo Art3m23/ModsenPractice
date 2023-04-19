@@ -17,7 +17,7 @@ export const MainPage = ({ setToken }) => {
     <div className={styles.modal}>
       <div>
         <h2 className={styles.title}>Weather App</h2>
-        <button type="button" onClick={() => handleClick()} className={styles.sign_in}>Sign in</button>
+        <button type="button" onClick={handleClick} className={styles.sign_in}>Sign in</button>
       </div>
     </div>
   );

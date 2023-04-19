@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": ["./components/*"],
+      "@actions": ["src/actions"],
+      "@const": ["src/const"],
+      "@reducers": ["src/reducers"],
+      "@services":["src/services"],
+      "@errorBoundary" : ["src/errorBoundary"]
+    }
+  },
+  "include": ["src"]
+}

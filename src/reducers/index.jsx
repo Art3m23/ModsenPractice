@@ -14,6 +14,45 @@ import storage from 'redux-persist/lib/storage';
 import thunk from "redux-thunk";
 import { weatherReducer } from "./reducerWeather";
 import { eventsReducer } from "./reducerEvents";
+// const sagaMiddleware = createSagaMiddleware()
+
+// const persistConfig = {
+//   key: 'root',
+//   storage,
+// }
+
+
+// const rootReducer = combineReducers({
+//   weather: weatherReducer,
+//   events: eventsReducer
+// });
+
+// const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+// export const store = configureStore({
+//   reducer: persistedReducer,
+//   middleware: (getDefaultMiddleware) =>
+//     getDefaultMiddleware({
+//       serializableCheck: {
+//         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+//       },
+//     }).prepend(sagaMiddleware),
+// }
+// );
+
+// export const store = configureStore({
+//     reducer: persistedReducer,
+//     middleware: (getDefaultMiddleware) =>
+//       getDefaultMiddleware({
+//         serializableCheck: {
+//           ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+//         },
+//       })
+//   },
+//   applyMiddleware(thunk)
+//   );
+// sagaMiddleware.run(rootSaga);
+// export const persistor = persistStore(store);
 
 const persistConfig = {
   key: 'root',

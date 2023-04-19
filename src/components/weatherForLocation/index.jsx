@@ -28,6 +28,7 @@ export const WeatherForLocation = () => {
     if (weather) {
       setValue(weather.location.name);
       [...weatherForWeek.current.children][0].classList.add(styles.activeDay);
+      console.log(weather)
     }
   }, [weather])
 
